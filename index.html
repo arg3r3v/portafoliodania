@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portafolio Artístico</title>
+<link href="https://fonts.googleapis.com/css2?family=Courgette&family=Playfair+Display:ital,wght@0,400;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@400;500&display=swap" rel="stylesheet">
+<style>
+    body {
+        font-family: 'Josefin Slab', serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+    }
+    #container {
+        background-image: url('img/fondo.jpg');
+        background-size: cover;
+        background-position: center;
+        padding: 20px;
+        box-sizing: border-box;
+        position: relative;
+        background-attachment: fixed; /* Fondo fijo */
+    }
+    #content {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco transparente */
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+#imagen-colibri {
+    width: 80%;
+    height: auto;
+    margin-top: 10px; /* Aumenta el espacio entre la imagen y el menú */
+    margin-bottom: 10px; /* Aumenta el espacio entre la imagen y la primera sección */
+}
+
+#menu {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px; /* Aumenta el espacio entre el menú y la primera sección */
+}
+
+.section {
+    margin-top: 20px; /* Aumenta el espacio entre las secciones */
+    padding-bottom: 20px; /* Aumenta el espacio entre las secciones y el contenido siguiente */
+}
+    h1 {
+        font-family: 'Courgette', cursive; /* Fuente Dancing Script */
+        font-size: 48px; /* Tamaño del título */
+        text-transform: uppercase; /* Convertir a mayúsculas */
+        margin-bottom: 20px; /* Espacio inferior */
+    }
+    button {
+        font-family: 'Josefin Slab', serif; /* Fuente bonita */
+        font-weight: bold;
+        font-size: 16px;
+        color: #000; /* Color negro */
+        background-color: transparent; /* Fondo transparente */
+        border: 2px solid #fff; /* Borde blanco */
+        border-radius: 5px;
+        padding: 10px 20px;
+        margin: 0 10px;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+    }
+    button:hover {
+        background-color: #fff; /* Fondo blanco al pasar el mouse */
+        color: #000; /* Texto negro al pasar el mouse */
+    }
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
+
+.popup-content {
+    background-color: #ffeaa7;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    font-family: Arial, sans-serif;
+    position: relative;
+    max-width: 80%; /* Cambia este valor según sea necesario */
+    margin: 0 auto;
+}
+
+.popup-content img {
+    max-width: 100%; /* Ajustamos el ancho máximo */
+    height: auto;
+    border-radius: 10px;
+}
+
+.popup-image {
+    max-width: 10px; /* Ajusta el ancho máximo de la imagen */
+    height: auto; /* Permite que la altura se ajuste automáticamente */
+    border-radius: 10px; /* Opcional: añade bordes redondeados */
+}
+
+.popup-text {
+    margin-top: 20px;
+    font-family: 'Courgette', cursive;
+    font-size: 20px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+@media screen and (max-width: 1080px) {
+    #container {
+        padding: 10px;
+    }
+
+    #content {
+        padding: 10px;
+    }
+
+    #imagen-colibri {
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .popup {
+        width: 90%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .popup-content {
+        padding: 10px;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    .popup-text {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
+
+    .close-btn {
+        font-size: 20px;
+    }
+}
+
+</style>
+</head>
+<body>
+<div class="popup" id="popup">
+    <div class="popup-content">
+        <span class="close-btn" onclick="closePopup()">×</span>
+        <img src="img/dania.jpg" alt="Dania" style="max-width: 40%; height: auto;">
+        <p class="popup-text">"Somos lo que dejamos en el corazón de las personas".</p>
+        <p class="popup-text">Bienvenido a mi mundo de la mente al papel.</p>
+    </div>
+</div>
+
+    <div id="container">
+        <div id="content">
+            <h1>DANIA HERNÁNDEZ</h1> <!-- Título agregado -->
+            <div id="menu">
+                <a href="#statement"><button>Statement</button></a>
+                <a href="#obras"><button>Obras</button></a>
+                <a href="#redes"><button>Redes</button></a>
+            </div>
+    
+    <img id="imagen-colibri" src="img/vuelvo.jpg" alt="Colibrí">
+            
+            <div class="section" id="statement">
+                <h2>Statement  de Dania</h2>
+                <p>Me identifico como un ser apasionado, abstracto, que encuentra deleite en los colores de la vida, la música y los desafíos. Soy una persona visionaria en el arte y la vida, comprometida a aprender no solo de los éxitos, sino también de lo que algunos llaman "fracasos". Me considero creadora por naturaleza.</p>
+                <p>Mi trayectoria comienza desde lo más profundo de mi ser, explorando mi capacidad para plasmar en papel todo aquello que imagino, sueño y visualizo. Es así como nace mi amor por la pintura, descubriendo mi verdadera esencia.</p>
+                <p>Mi objetivo es que quienes observen mi trabajo se identifiquen con alguna faceta de su ser y reconozcan su propio potencial creativo.</p>
+                <p>Aspiro a alcanzar grandes logros, no solo en términos de reconocimiento, sino también en cuanto a la capacidad de demostrar el alcance de mi mente y mi habilidad para seguir creando. Anhelo exhibir todo aquello que es difícil de expresar en palabras convencionales, ya sea a través de libros, revistas, museos o exposiciones, siempre que la vida me brinde la oportunidad.</p>
+            </div>
+
+            <div class="section" id="obras">
+                <h2>Obras</h2>
+                <div>
+                    <img src="img/byn.jpg" alt="Obra 1" style="max-width: 80%; height: auto;">
+                    <p>Evolución Inexorable</p>
+                    <p>2024</p>
+                    <p>31×23 cm</p>
+                </div>
+                <div>
+                    <img src="img/metamorfosis.jpg" alt="Obra 2" style="max-width: 80%; height: auto;">
+                    <p>Metamorfosis</p>
+                    <p>2021</p>
+                    <p>33×24 cm</p>
+                </div>
+                <div>
+                    <img src="img/demencia.jpg" alt="Obra 3" style="max-width: 80%; height: auto;">
+                    <p>Demencia</p>
+                    <p>2022</p>
+                    <p>33×24 cm</p>
+                </div>
+                <div>
+                    <img src="img/demenciaenextrangero.jpg" alt="Obra 3 Extrangero" style="max-width: 80%; height: auto;">
+                    <p>Durante mi trayectoria artística, he tenido el privilegio de llevar mis obras más allá de las fronteras de mi país natal. Demencia actualmente se encuentra en una colección privada en Maiami.</p>
+                </div>
+                <div>
+                    <img src="img/enlosojos.jpg" alt="Obra 4" style="max-width: 80%; height: auto;">
+                    <p>En los ojos</p>
+                    <p>2021</p>
+                    <p>33×24 cm</p>
+                </div>
+                <div>
+                    <img src="img/enlamente.jpg" alt="Obra 8" style="max-width: 80%; height: auto;">
+                    <p>En la mente</p>
+                    <p>2021</p>
+                    <p>33×24 cm</p>
+                </div>
+                <div>
+                    <img src="img/efimero.jpg" alt="Obra 10" style="max-width: 80%; height: auto;">
+                    <p>Efímero</p>
+                    <p>2021</p>
+                    <p>23×20 cm</p>
+                </div>
+                <div>
+                    <img src="img/vuelvo.jpg" alt="Obra 11" style="max-width: 80%; height: auto;">
+                    <p>Vuelvo</p>
+                    <p>2021</p>
+                    <p>33×24 cm</p>
+                </div>
+                <div>
+                    <img src="img/metamorfosis1.jpg" alt="Obra 7" style="max-width: 80%; height: auto;">
+                    <p>Metamorfosis</p>
+                    <p>2021</p>
+                    <p>33×24 cm</p>
+                </div>
+                <div>
+                    <img src="img/fuego.jpg" alt="Obra 5" style="max-width: 80%; height: auto;">
+                    <p>Fuego</p>
+                    <p>2021</p>
+                    <p>55x40 cm</p>
+                </div>
+                <div>
+                    <img src="img/fuegoenextrangero.jpg" alt="Obra 5 Extrangero" style="max-width: 80%; height: auto;">
+                    <p>Con humildad y dedicación, me complace compartir que algunas de mis creaciones han encontrado un hogar en colecciones privadas y galerías en el extranjero. Fuego actualmente se encuentra en una colección privada en París.</p>
+                </div>
+                <div>
+                    <img src="img/muchotexto.jpg" alt="Obra 6" style="max-width: 80%; height: auto;">
+                    <p>Mucho texto</p>
+                    <p>2021</p>
+                    <p>23×23 cm</p>
+                </div>
+                <div>
+                    <img src="img/pecesito.jpg" alt="Obra 9" style="max-width: 80%; height: auto;">
+                    <p>Sin Nombre</p>
+                    <p>2021</p>
+                    <p>33×24 cm</p>
+                </div>
+                <div>
+                    <img src="img/entrenosotros.jpg" alt="Obra 12" style="max-width: 80%; height: auto;">
+                    <p>Entre Nosotros</p>
+                    <p>2021</p>
+                    <p>33×24 cm</p>
+                </div>
+                <div>
+                    <img src="img/souvenir.jpg" alt="Obra 13" style="max-width: 80%; height: auto;">
+                    <p>Souvenir</p>
+                    <p>2021</p>
+                    <p>28×21 cm</p>
+                </div>
+                <div>
+                    <img src="img/porlatarde.jpg" alt="Obra 14" style="max-width: 80%; height: auto;">
+                    <p>Por la tarde</p>
+                    <p>2021</p>
+                    <p>33×24 cm</p>
+                </div>
+                <div>
+                    <img src="img/rosa.jpg" alt="Obra 15" style="max-width: 80%; height: auto;">
+                    <p>Rosa</p>
+                    <p>2021</p>
+                    <p>21×12 cm</p>
+                </div>
+                <div>
+                    <img src="img/hipocresia.jpg" alt="Obra 16" style="max-width: 80%; height: auto;">
+                    <p>Hipocresía</p>
+                    <p>2021</p>
+                    <p>33×24 cm</p>
+                </div>
+                <div>
+                    <img src="img/bobcito.jpg" alt="Obra 17" style="max-width: 80%; height: auto;">
+                    <p>Sin nombre</p>
+                    <p>2021</p>
+                    <p>21×12 cm</p>
+                </div>
+                <div>
+                    <img src="img/nani.jpg" alt="Obra 18" style="max-width: 80%; height: auto;">
+                    <p>Nani</p>
+                    <p>2021</p>
+                    <p>31×23</p>
+                </div>
+                <div>
+                    <img src="img/rojo.jpg" alt="Obra 19" style="max-width: 80%; height: auto;">
+                    <p>Rojo</p>
+                    <p>2023</p>
+                    <p>33×24 cm</p>
+                </div>
+                <div>
+                    <img src="img/ser.jpg" alt="Obra 20" style="max-width: 80%; height: auto;">
+                    <p>Ser</p>
+                    <p>2023</p>
+                    <p>33×24 cm</p>
+                </div>
+            </div>
+
+<div class="section" id="redes">
+    <h2>Redes</h2>
+    <a href="#" onclick="redirect('https://www.instagram.com/beberconlosojos/')" title="Instagram"><img src="img/instagram.png" alt="Instagram" style="max-width: 7%; height: auto;"></a>
+    <a href="#" onclick="redirect('https://www.facebook.com/daniia.dejesus')" title="Facebook"><img src="img/facebook.png" alt="Facebook" style="max-width: 7%; height: auto;"></a>
+    <a href="#" onclick="redirect('https://www.instagram.com/_dannnia_/')" title="Otra red social"><img src="img/instagram.png" alt="Otra red social" style="max-width: 7%; height: auto;"></a>
+</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function() {
+    document.getElementById('popup').style.display = 'block';
+};
+
+function closePopup() {
+    document.getElementById('popup').style.display = 'none';
+}
+    function redirect(url) {
+        window.open(url, '_blank');
+    }
+    </script>
+</body>
+</html>
